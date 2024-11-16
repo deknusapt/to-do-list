@@ -15,6 +15,7 @@ try {
     die ("Apps terminated.");
 }
 
+// Variables to store the environment value
 $hostname = $envVariables['DB_HOST'] ?? 'localhost';
 $username = $envVariables['DB_USERNAME'] ?? 'root';
 $password = $envVariables['DB_PASSWORD'] ?? ' ';

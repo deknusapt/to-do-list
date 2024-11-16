@@ -3,7 +3,7 @@
 /**
  * @throws Exception
  */
-function loadEnv($filePath)
+function loadEnv($filePath): array
 {
     // Condition to check the file existence
     if (!file_exists($filePath)) {
