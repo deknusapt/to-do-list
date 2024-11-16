@@ -1,4 +1,4 @@
-# To-Do List App
+# To-Do List Apps
 A simple to-do list app project made with HTML, CSS, JS and PHP (Native).
 
 > *part of [@deknusapt](https://github.com/deknusapt) learning project*
