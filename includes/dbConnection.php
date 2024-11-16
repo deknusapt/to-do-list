@@ -7,13 +7,18 @@ error_reporting(E_ALL);
 // Load the required files
 require 'functions.php';
 
-// Load variables from .env file
-$envVariables = loadEnv('.env');
+// Load variables from .env file, with try-catch
+try {
+    $envVariables = loadEnv('.env');
+} catch (Exception $e) {
+    echo "Error to load the configuration: " . $e -> getMessage();
+    die ("Apps terminated.");
+}
 
 $hostname = $envVariables['DB_HOST'] ?? 'localhost';
 $username = $envVariables['DB_USERNAME'] ?? 'root';
 $password = $envVariables['DB_PASSWORD'] ?? ' ';
-$dbname = $envVariables['DB_NAME'] ?? 'nama_database';
+$dbname = $envVariables['DB_NAME'] ?? 'database_name';
 
 // Connection into database
 $conn = mysqli_connect("$hostname", "$username", "$password", "$dbname");

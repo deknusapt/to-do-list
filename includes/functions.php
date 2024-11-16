@@ -1,26 +1,36 @@
 <?php
 // Function to read .env file
-function loadEnv($file)
+/**
+ * @throws Exception
+ */
+function loadEnv($filePath)
 {
-    // To read the .env file and converts every row with their key-value
-    $env = [];
-    if (file_exists($file)) {
-        $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($lines as $line) {
-
-            if (strpos(trim($line), '#') === 0) {
-                continue;
-            }
-            // Divide the key and value with explode()
-            list($key, $value) = explode('=', $line, 2);
-            $env[trim($key)] = trim($value);
-        }
+    // Condition to check the file existence
+    if (!file_exists($filePath)) {
+        throw new Exception("File .env cannot be found!");
     }
-    return $env;
-}
 
-// Load the .env file
-$envVariables = loadEnv('.env');
+    // Read the .env file on every single lines
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $envVariables = [];
+
+    // Proceed every lines inside .env file
+    foreach ($lines as $line) {
+        // Condition to ignore comment lines
+        if (str_starts_with(trim($line), '#')) {
+            continue;
+        }
+
+        // Split the key and value based on '=' sign
+        list($key, $value) = explode('=', $line, 2);
+
+        // Stored key and it values into an array
+        $envVariables[trim($key)] = trim($value);
+    }
+
+    // Returns an array containing environment variables
+    return $envVariables;
+}
 
 
 
