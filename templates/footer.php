@@ -1,4 +1,4 @@
-<!-- Footer untuk halaman utama -->
+<!-- Main Page Footer -->
 <footer>
     <p>Version 1.0</p>
 </footer>

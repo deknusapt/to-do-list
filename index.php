@@ -1,7 +1,8 @@
 <?php
+// Database connection configuration
 require 'includes/dbConnection.php';
 
-// Memanggil template untuk header
+// Call the header template
 require 'templates/header.php';
 
 ?>
@@ -52,5 +53,6 @@ require 'templates/header.php';
 </main>
 
 <?php
+    // Call the footer template
     require 'templates/footer.php'
 ?>
