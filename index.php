@@ -6,14 +6,51 @@ require 'templates/header.php';
 
 ?>
 
-<h1>To-Do List Now!</h1>
-
 <main>
-    <form action="" method="post">
-        <input type="text" name="keyword" placeholder="Find your task" autocomplete="off" autofocus>
-        <button type="submit" name="search">Find</button>
-    </form>
+    <div class="search-form">
+        <form action="" method="post">
+            <input type="text" name="keyword" placeholder="Find your task" autocomplete="off" autofocus>
+            <button type="submit" name="search">Find</button>
+        </form>
+    </div>
 
-    <a href="views/create.php">Add your task</a>
+    <div class="floating-button">
+        <button>Add Task</button>
+    </div>
 
+    <div>
+        <table>
+            <tr>
+                <td id="table-task">Take a bath!</td>
+                <td>
+                    <button onclick="document.location='...'">Edit</button>
+                </td>
+                <td>
+                    <button onclick="document.location='...'">Complete</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="table-task">Take a groceries store todayyyyyyyyyyyyy</td>
+                <td>
+                    <button onclick="document.location='...'">Edit</button>
+                </td>
+                <td>
+                    <button onclick="document.location='...'">Complete</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="table-task">Do some homework!</td>
+                <td>
+                    <button onclick="document.location='...'">Edit</button>
+                </td>
+                <td>
+                    <button onclick="document.location='...'">Complete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </main>
+
+<?php
+    require 'templates/footer.php'
+?>
