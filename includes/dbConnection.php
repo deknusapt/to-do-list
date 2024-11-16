@@ -9,10 +9,9 @@ require 'functions.php';
 
 // Load variables from .env file, with try-catch
 try {
-    $envVariables = loadEnv('.env');
+    $envVariables = loadEnv(dirname(__DIR__) . '/.env');
 } catch (Exception $e) {
     echo "Error to load the configuration: " . $e -> getMessage();
-    die ("Apps terminated.");
 }
 
 // Variables to store the environment value
