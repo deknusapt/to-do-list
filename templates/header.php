@@ -8,20 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>To-Do List App</title>
-    <link rel="icon" href="/assets/img/favicon-16x16.png">
+    <link rel="icon" href="../assets/img/favicon-16x16.png">
 
     <!--  Stylesheet  -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 
-    <!--  Google Fonts  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--  FontAwesome Kits  -->
+    <script src="https://kit.fontawesome.com/8102523cde.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 <nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-    </ul>
+    <div class="nav-container">
+        <ul class="nav-left">
+            <li><a href="../index.php"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <ul class="nav-right">
+            <li>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+            </li>
+        </ul>
+    </div>
 </nav>

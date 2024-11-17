@@ -1,6 +1,6 @@
-/* Body Styling */
+/* Selector Styling */
 body {
-    font-family: Inter, sans-serif;
+    font-family: sans-serif !important;
     margin: 0;
     padding: 0;
 
@@ -11,8 +11,6 @@ body {
 
 h1 {
     font-weight: 700;
-    font-size: 35px;
-
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -21,6 +19,20 @@ h1 span {
     font-weight: 300;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* End of Selector Styling */
+
 
 /* Navigation Styling */
 nav {
@@ -28,12 +40,17 @@ nav {
     padding: 5px;
 }
 
-nav ul {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li a {
@@ -47,42 +64,87 @@ nav ul li a:hover {
     background-color: #555;
     border-radius: 5px;
 }
+/* End of Navigation Styling */
 
 
 /* Header Styling */
 header {
     width: 100%;
-    border-bottom: 1px solid #b7b7b7;
     margin-bottom: 25px;
 
     text-align: center;
 }
+/* End of Header Styling */
+
 
 /* Form Styling */
 .search-form, .floating-button {
     text-align: center;
 }
 
+.search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+.search-bar::placeholder {
+    color: #999; /* Placeholder text color */
+}
+/* End of Form Styling */
+
+
 /* Table Styling */
-table {
-    width: 30%;
+.todo-table {
+    table-layout: auto;
+    width: 100%;
+    max-width: 600px;
     margin: 25px auto;
-
-    border: 1px solid black;
+    border-collapse: collapse;
     border-radius: 5px;
-    padding: 5px;
+    overflow: hidden;
 }
 
-#table-task {
-    height: 25px;
+.todo-table tr {
+    background-color: #f9f9f9;
 }
+
+.todo-row-table {
+    padding: 12px 20px;
+    font-size: 16px;
+    word-wrap: break-word;
+    text-align: left;
+    width: 70%;
+}
+
+.todo-button-table {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    width: 30%;
+}
+
+.todo-link-table {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.todo-link-table:hover {
+    color: #0056b3;
+}
+/* End of Table Styling */
 
 
 /* Create Task Styling */
 .create-form {
     display: flex;
     flex-direction: column;
-    width: 90%;
     gap: 10px;
     max-width: 900px;
     margin: 120px auto 0;
@@ -91,11 +153,9 @@ table {
 
 .task-title-form {
     border: 0;
-    font-weight: 600;
-    font-size: 64px;
+    font-weight: 700;
+    font-size: 48px;
     outline: none;
-
-    /*font-family: Inter, sans-serif;*/
 }
 
 .task-desc-form {
@@ -105,18 +165,9 @@ table {
     font-size: 16px;
     outline: none;
     resize: none;
-
-    /*font-family: Inter, sans-serif;*/
-}
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.create-button-form {
+.create-button-form{
     display: flex;
     justify-content: flex-start;
     gap: 10px;
@@ -130,7 +181,7 @@ button {
     color: #fff;
 }
 
-.discard-btn {
+.delete-btn {
     background-color: #dc3545;
     color: #fff;
 }
@@ -138,6 +189,7 @@ button {
 button:hover {
     opacity: 0.9;
 }
+/* End of Create Task Styling */
 
 
 /* Footer Styling */
@@ -150,3 +202,4 @@ footer {
 footer p {
     margin: 0;
 }
+/* End of Footer Styling */
