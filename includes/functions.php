@@ -33,6 +33,41 @@ function loadEnv($filePath): array
 }
 
 
+// Query functions to fetch DB data into array
+function queryData($querySyntax): array
+{
+    global $conn;
+    $result = mysqli_query($conn, $querySyntax);
+    $rows = [];
+
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+
+// Function to create new task and inserting to database
+function addTask($newTask): int|string
+{
+    global $conn;
+    $task_name = htmlspecialchars($newTask['task-name']);
+    $task_desc = htmlspecialchars($newTask['task-desc']);
+
+    $newTaskQuery = "INSERT INTO task(task_name, description) VALUES('$task_name','$task_desc')";
+
+    try {
+        mysqli_query($conn, $newTaskQuery);
+        return mysqli_affected_rows($conn);
+    } catch (Exception $e){
+        return -1;
+    }
+}
+
+
+
+
 
 
 

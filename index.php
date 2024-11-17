@@ -1,9 +1,13 @@
 <?php
-// Database connection configuration
+// Database connection & functions
 require 'includes/dbConnection.php';
+require_once 'includes/functions.php';
 
 // Call the header template
 require 'templates/header.php';
+
+// Collect all queried data from queryData()
+$allData = queryData("SELECT * FROM task");
 ?>
 
 <header>
@@ -15,46 +19,41 @@ require 'templates/header.php';
 <main>
     <div class="search-form">
         <form action="" method="post">
-            <input type="text" name="keyword" placeholder="Find your task" autocomplete="off" autofocus>
-            <button type="submit" name="search">Find</button>
+            <input
+                    class="search-bar"
+                    type="text"
+                    name="keyword"
+                    placeholder="Find your task"
+                    autocomplete="off" autofocus>
+            <button type="submit" name="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </form>
     </div>
 
     <div class="floating-button">
-        <button onclick="document.location='/views/createTask.php'">Add Task</button>
+        <button onclick="document.location='./views/createTask.php'">
+            <i class="fa-solid fa-plus"></i> Add Task
+        </button>
     </div>
 
-    <div>
-        <table>
-            <tr>
-                <td id="table-task">Take a bath!</td>
-                <td>
-                    <button onclick="document.location='...'">Edit</button>
-                </td>
-                <td>
-                    <button onclick="document.location='...'">Complete</button>
-                </td>
-            </tr>
-            <tr>
-                <td id="table-task">Take a groceries store todayyyyyyyyyyyyy</td>
-                <td>
-                    <button onclick="document.location='...'">Edit</button>
-                </td>
-                <td>
-                    <button onclick="document.location='...'">Complete</button>
-                </td>
-            </tr>
-            <tr>
-                <td id="table-task">Do some homework!</td>
-                <td>
-                    <button onclick="document.location='...'">Edit</button>
-                </td>
-                <td>
-                    <button onclick="document.location='...'">Complete</button>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <table class="todo-table">
+        <?php foreach ($allData as $row): ?>
+        <tr>
+            <td class="todo-row-table">
+                <a href="./views/taskDetails.php" class="todo-link-table"><?= $row["task_name"]; ?></a>
+            </td>
+            <td class="todo-button-table">
+                <button onclick="document.location='...'" class="todo-btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button onclick="document.location='...'" class="todo-btn-complete">
+                    Complete
+                </button>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </main>
 
 <?php
