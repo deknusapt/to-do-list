@@ -25,10 +25,3 @@
         <li><a href="#">Home</a></li>
     </ul>
 </nav>
-
-<header>
-    <h1>
-        To-Do List
-        <span>Apps</span>
-    </h1>
-</header>
