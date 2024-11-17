@@ -4,9 +4,14 @@ require 'includes/dbConnection.php';
 
 // Call the header template
 require 'templates/header.php';
-
 ?>
 
+<header>
+    <h1>
+        To-Do List
+        <span>Apps</span>
+    </h1>
+</header>
 <main>
     <div class="search-form">
         <form action="" method="post">
@@ -16,7 +21,7 @@ require 'templates/header.php';
     </div>
 
     <div class="floating-button">
-        <button>Add Task</button>
+        <button onclick="document.location='/views/createTask.php'">Add Task</button>
     </div>
 
     <div>
