@@ -113,6 +113,22 @@ function setTaskStatus($taskId): int|string
 }
 
 
+// Function for removing task from database
+function deleteTask($taskId): int|string
+{
+    global $conn;
+
+    if (is_array($taskId)) {
+        $id = intval($taskId["id"]);
+    } else {
+        $id = intval($taskId);
+    }
+
+    mysqli_query($conn, "DELETE FROM task WHERE id = $id");
+    return mysqli_affected_rows($conn);
+}
+
+
 
 
 
