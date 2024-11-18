@@ -38,6 +38,7 @@ function loadEnv($filePath): array
 function queryData($querySyntax): array
 {
     global $conn;
+
     $result = mysqli_query($conn, $querySyntax);
     $rows = [];
 
@@ -53,10 +54,33 @@ function queryData($querySyntax): array
 function addTask($newTask): int|string
 {
     global $conn;
+
     $task_name = htmlspecialchars($newTask['task-name']);
     $task_desc = htmlspecialchars($newTask['task-desc']);
 
     $newTaskQuery = "INSERT INTO task(task_name, description) VALUES('$task_name','$task_desc')";
+
+    try {
+        mysqli_query($conn, $newTaskQuery);
+        return mysqli_affected_rows($conn);
+    } catch (Exception $e){
+        return -1;
+    }
+}
+
+
+// Function to update available task on database
+function updateTask($newDataTask): int|string
+{
+    global $conn, $id;
+
+    $task_name = htmlspecialchars($newDataTask['task-name']);
+    $task_desc = htmlspecialchars($newDataTask['task-desc']);
+
+    $newTaskQuery = "UPDATE task SET 
+                    task_name = '$task_name', 
+                    description = '$task_desc'
+                    WHERE id = $id";
 
     try {
         mysqli_query($conn, $newTaskQuery);
