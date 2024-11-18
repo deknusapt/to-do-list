@@ -6,6 +6,16 @@ require_once 'includes/functions.php';
 // Call the header template
 require 'templates/header.php';
 
+// Collect all queried data from queryData()
+$allData = queryData("SELECT * FROM task WHERE status = 'pending'");
+
+// Search condition to check inputted keywords
+if (isset($_POST["search"]))
+{
+    $allData = searchTask($_POST["keyword"]);
+}
+
+// Condition for completed task by ID
 if (isset($_POST["complete_task_btn"]))
 {
     $taskId = $_POST['id'];
@@ -27,9 +37,6 @@ if (isset($_POST["complete_task_btn"]))
         ";
     }
 }
-
-// Collect all queried data from queryData()
-$allData = queryData("SELECT * FROM task WHERE status = 'pending'");
 ?>
 
 <header>
