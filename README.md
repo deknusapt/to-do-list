@@ -20,6 +20,6 @@ Several features have been created to support those core basic concept, like *__
 - Task can be edited with edit button.
 - User can modify its created task, like title and description.
 - Here's user can save task or delete it with button available.
-#### Search for task feature (WIP)
+#### Search for task feature
 - User can do a search for task available on database.
-- Can only search for task title as a keywords.
+- Can only search for task title 'word' as a keywords.
