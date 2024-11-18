@@ -38,14 +38,16 @@ if (isset($_POST["submit"]))
                    id="task-name"
                    class="task-title-form"
                    placeholder="Task name"
-                   autocomplete="off">
+                   autocomplete="off"
+                   required>
             <textarea
                     name="task-desc"
                     id="task-desc"
                     class="task-desc-form"
                     autocomplete="off"
                     maxlength="300"
-                    placeholder="Write your description here..."></textarea>
+                    placeholder="Write your description here..."
+                    required></textarea>
         </div>
         <div class="create-button-form">
             <button type="submit" name="submit" class="save-btn">Save Task</button>
