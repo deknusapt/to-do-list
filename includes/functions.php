@@ -129,6 +129,15 @@ function deleteTask($taskId): int|string
 }
 
 
+// Function for task search
+function searchTask($keyword): array
+{
+    $searchQuery = "SELECT * FROM task WHERE task_name LIKE '%$keyword%'";
+
+    return queryData($searchQuery);
+}
+
+
 
 
 
