@@ -51,7 +51,8 @@ if (isset($_POST["submit"]))
         </div>
         <div class="create-button-form">
             <button type="submit" name="submit" class="save-btn">Save Task</button>
-            <button type="button" name="delete" class="delete-btn">Delete</button>
+            <button type="button" name="delete" class="delete-btn"
+                    onclick="window.location.href='../index.php'">Discard</button>
         </div>
     </form>
 </main>
