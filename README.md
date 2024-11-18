@@ -6,7 +6,10 @@ A simple to-do list app project made with HTML, CSS, JS and PHP (Native).
 Memo
 : This project was intended for me to learn basic concepts of CRUD's and how it works on web application. 
 Several features have been created to support those core basic concept, like *__viewing__*, *__adding__*, 
-*__editing__*, and *__deleting__* task while stored on database.
+*__editing__*, and *__deleting__* task while stored on database. Project created on 15 November 2024 
+and finished within 4 days.
+
+<br>
 
 > ### Version 1.0 (Basic Release) :
 #### View for task list
