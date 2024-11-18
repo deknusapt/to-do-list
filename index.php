@@ -67,7 +67,7 @@ $allData = queryData("SELECT * FROM task WHERE status = 'pending'");
                 <a href="./views/taskDetails.php?id=<?= $row["id"]; ?>" class="todo-link-table"><?= $row["task_name"]; ?></a>
             </td>
             <td class="todo-button-table">
-                <button class="todo-btn-edit">
+                <button onclick="window.location.href='views/editTask.php?id=<?= $row["id"]; ?>'" class="todo-btn-edit">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </button>
                 <form action="" method="post">
