@@ -6,12 +6,35 @@ require_once 'includes/functions.php';
 // Call the header template
 require 'templates/header.php';
 
+if (isset($_POST["complete_task_btn"]))
+{
+    $taskId = $_POST['id'];
+    $result = setTaskStatus($taskId);
+
+    if ($result > 0)
+    {
+        echo "
+            <script>
+                alert('Task completed!');
+                document.location.href = 'index.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Failed to set task status!');
+            </script>
+        ";
+    }
+}
+
 // Collect all queried data from queryData()
-$allData = queryData("SELECT * FROM task");
+$allData = queryData("SELECT * FROM task WHERE status = 'pending'");
 ?>
 
 <header>
     <h1>
+
         To-Do List
         <span>Apps</span>
     </h1>
@@ -41,15 +64,18 @@ $allData = queryData("SELECT * FROM task");
         <?php foreach ($allData as $row): ?>
         <tr>
             <td class="todo-row-table">
-                <a href="./views/taskDetails.php" class="todo-link-table"><?= $row["task_name"]; ?></a>
+                <a href="./views/taskDetails.php?id=<?= $row["id"]; ?>" class="todo-link-table"><?= $row["task_name"]; ?></a>
             </td>
             <td class="todo-button-table">
-                <button onclick="document.location='...'" class="todo-btn-edit">
+                <button class="todo-btn-edit">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button onclick="document.location='...'" class="todo-btn-complete">
-                    Complete
-                </button>
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $row["id"]; ?>">
+                    <button name="complete_task_btn" class="todo-btn-complete">
+                        Complete
+                    </button>
+                </form>
             </td>
         </tr>
         <?php endforeach; ?>

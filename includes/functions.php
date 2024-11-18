@@ -33,6 +33,7 @@ function loadEnv($filePath): array
 }
 
 
+
 // Query functions to fetch DB data into array
 function queryData($querySyntax): array
 {
@@ -59,6 +60,28 @@ function addTask($newTask): int|string
 
     try {
         mysqli_query($conn, $newTaskQuery);
+        return mysqli_affected_rows($conn);
+    } catch (Exception $e){
+        return -1;
+    }
+}
+
+
+// Functions for updating task status into 'completed'
+function setTaskStatus($taskId): int|string
+{
+    global $conn;
+
+    if (is_array($taskId)) {
+        $id = intval($taskId["id"]);
+    } else {
+        $id = intval($taskId);
+    }
+
+    $setStatusTaskQuery = "UPDATE task SET status = 'completed' WHERE id = $id";
+
+    try {
+        mysqli_query($conn, $setStatusTaskQuery);
         return mysqli_affected_rows($conn);
     } catch (Exception $e){
         return -1;
