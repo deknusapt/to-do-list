@@ -20,7 +20,7 @@
 <nav>
     <div class="nav-container">
         <ul class="nav-left">
-            <li><a href="../index.php"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/to-do-list/index.php"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="#">About</a></li>
         </ul>
         <ul class="nav-right">
