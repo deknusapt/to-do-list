@@ -10,6 +10,11 @@
     <title>To-Do List App</title>
     <link rel="icon" href="../assets/img/favicon-16x16.png">
 
+    <!--  Google Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
     <!--  Stylesheet  -->
     <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -20,8 +25,8 @@
 <nav>
     <div class="nav-container">
         <ul class="nav-left">
-            <li><a href="/to-do-list/index.php"><i class="fa-solid fa-house"></i></a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="../index.php"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="../views/about.php">About</a></li>
         </ul>
         <ul class="nav-right">
             <li>
