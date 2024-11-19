@@ -10,7 +10,12 @@ Several features have been created to support those core basic concept, like *__
 
 <br>
 
-> ## Version 1.0.0 [Basic Release] :
+### System Flow:
+![system-flow](/assets/img/system-flow.png)
+<br>
+
+
+> ### Version 1.0.0 [Basic Release] :
 #### View for task list
 - All the task that have been created, show as list on main page.
 - There is task title, edit, and complete button.
