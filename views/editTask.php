@@ -45,6 +45,7 @@ if (isset($_POST["submit"]))
                    id="task-name"
                    class="task-title-form"
                    autocomplete="off"
+                   autofocus
                    value="<?= $taskDataById["task_name"]; ?>"
                    required>
             <textarea
@@ -53,6 +54,7 @@ if (isset($_POST["submit"]))
                 class="task-desc-form"
                 autocomplete="off"
                 maxlength="300"
+                autofocus
                 required><?= $taskDataById["description"]; ?></textarea>
         </div>
         <div class="create-button-form">
