@@ -14,7 +14,7 @@ require '../templates/header.php';
             Several features have been created to support those core basic concept, like
             <i><strong>viewing, adding, editing,</strong></i> and <i><strong>deleting</strong></i> task while stored on database.
         </p>
-        <img class="img-about" src="../assets/img/system-flow.png" width="700" alt="system flow">
+        <img class="img-about" src="../assets/img/system-flow-todolistapps.png" width="700" alt="system flow">
     </div>
 </main>
 
