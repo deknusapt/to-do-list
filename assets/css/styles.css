@@ -1,6 +1,6 @@
 /* Selector Styling */
 body {
-    font-family: sans-serif !important;
+    font-family: Sora, sans-serif;
     margin: 0;
     padding: 0;
 
@@ -190,6 +190,39 @@ button:hover {
     opacity: 0.9;
 }
 /* End of Create Task Styling */
+
+
+/* About Styling */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 900px;
+    margin: 100px auto 0;
+    border: 0;
+}
+
+.about-title {
+    border: 0;
+    font-weight: 700;
+    font-size: 48px;
+    outline: none;
+}
+.about-desc {
+    border: 0;
+    height: 50px;
+    font-weight: 300;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+}
+
+.img-about {
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-right: 100px;
+}
+/* End of About Styling */
 
 
 /* Footer Styling */
