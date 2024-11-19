@@ -79,7 +79,7 @@ if (isset($_POST["complete_task_btn"]))
                 </button>
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $row["id"]; ?>">
-                    <button name="complete_task_btn" class="todo-btn-complete">
+                    <button name="complete_task_btn">
                         Complete
                     </button>
                 </form>

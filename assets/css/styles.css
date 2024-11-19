@@ -30,6 +30,12 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+
+    font-family: Sora, sans-serif;
+}
+
+input, textarea {
+    font-family: Sora, sans-serif;
 }
 /* End of Selector Styling */
 
@@ -156,8 +162,6 @@ header {
     font-weight: 700;
     font-size: 48px;
     outline: none;
-
-    font-family: Sora, sans-serif;
 }
 
 .task-desc-form {
@@ -167,8 +171,6 @@ header {
     font-size: 16px;
     outline: none;
     resize: none;
-
-    font-family: Sora, sans-serif;
 }
 
 .create-button-form{
@@ -183,15 +185,11 @@ header {
 .save-btn {
     background-color: #28a745;
     color: #fff;
-
-    font-family: Sora, sans-serif;
 }
 
 .delete-btn {
     background-color: #dc3545;
     color: #fff;
-
-    font-family: Sora, sans-serif;
 }
 
 button:hover {
